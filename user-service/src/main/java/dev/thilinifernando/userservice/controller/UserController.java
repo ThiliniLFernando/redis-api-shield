@@ -1,0 +1,22 @@
+package dev.thilinifernando.userservice.controller;
+
+import jakarta.websocket.server.PathParam;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = "/api/v1/users")
+public class UserController {
+
+    @GetMapping("/")
+    public String getAllUsers() {
+        return "Get all users";
+    }
+
+    @GetMapping("/{userId}")
+    public String getUser(@PathVariable("userId") String userId) {
+        return "User " + userId;
+    }
+}

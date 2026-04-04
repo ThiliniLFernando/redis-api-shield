@@ -18,6 +18,13 @@ public class RateLimiterConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
+                .route("user-service-route", r -> r
+                        .path("/users/**")
+                        .filters(f -> f
+                                .stripPrefix(1)
+                                .prefixPath("/api/v1/users")
+                        )
+                        .uri("http://localhost:8082"))
                 .route("posts_route", r -> r
                         .path("/posts/**")
                         .filters(f -> f.requestRateLimiter(c -> {
