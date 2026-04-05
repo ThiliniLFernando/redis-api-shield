@@ -1,0 +1,4 @@
+package dev.thilinifernando.gatekeeper.model;
+
+// model/AuthenticatedUser.java
+public record AuthenticatedUser(String id, String plan) {}

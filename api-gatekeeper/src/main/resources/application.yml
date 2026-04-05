@@ -1,0 +1,11 @@
+server:
+  port: 8080
+gateway:
+  jwt:
+    secret: w3rvkqLcMgYYRVXmQ8/X91SwM9Gtm8WuEo5MSvx7V2U= #${JWT_SECRET}   # base64-encoded 256-bit key, set via env var
+
+spring:
+  main:
+    web-application-type: servlet
+  application:
+    name: api-gateway

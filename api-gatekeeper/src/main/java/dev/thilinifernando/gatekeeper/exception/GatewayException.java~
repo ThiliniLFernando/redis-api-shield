@@ -1,0 +1,16 @@
+package dev.thilinifernando.gatekeeper.exception;
+
+import lombok.Getter;
+import org.springframework.http.HttpStatusCode;
+
+@Getter
+public class GatewayException extends RuntimeException {
+    private final HttpStatusCode status;
+    private final String code;
+    public GatewayException(HttpStatusCode status,String code, String message) {
+        super(message);
+        this.status = status;
+        this.code = code;
+    }
+
+}
