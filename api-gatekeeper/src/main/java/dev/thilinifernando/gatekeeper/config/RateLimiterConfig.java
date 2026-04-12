@@ -22,7 +22,7 @@
 //                        .path("/users/**")
 //                        .filters(f -> f
 //                                .stripPrefix(1)
-//                                .prefixPath("/api/v1/users")
+//                                .prefixPath("/api/v1")
 //                        )
 //                        .uri("http://localhost:8082"))
 //                .route("posts_route", r -> r

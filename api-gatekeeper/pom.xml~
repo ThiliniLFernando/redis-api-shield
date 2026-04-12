@@ -33,9 +33,16 @@
 		</dependency>
 
 		<!-- Security — reactive auto-configures because WebFlux is present -->
+		<!-- AFTER — with exclusion -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-web</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- Redis reactive — needed for RedisRateLimiter + ReactiveRedisTemplate -->
