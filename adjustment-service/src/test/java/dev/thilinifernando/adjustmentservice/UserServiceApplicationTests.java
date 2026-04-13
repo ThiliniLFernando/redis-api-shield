@@ -1,4 +1,4 @@
-package dev.thilinifernando.userservice;
+package dev.thilinifernando.adjustmentservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

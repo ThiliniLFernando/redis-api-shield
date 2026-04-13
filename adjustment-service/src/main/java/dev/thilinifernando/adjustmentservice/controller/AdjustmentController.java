@@ -1,6 +1,5 @@
-package dev.thilinifernando.userservice.controller;
+package dev.thilinifernando.adjustmentservice.controller;
 
-import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/v1/users")
-public class UserController {
+public class AdjustmentController {
 
     @GetMapping("/")
     public String getAllUsers() {
