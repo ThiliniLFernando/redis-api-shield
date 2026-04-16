@@ -17,6 +17,21 @@ public class GatewayConfig {
                                 .stripPrefix(1)
                                 .prefixPath("/api/v1/users")
                         )
-                        .uri("http://localhost:8082")).build();
+                        .uri("http://localhost:8082"))
+                .route("payment-service-route", r -> r
+                        .path("/payments/**")
+                        .filters(f -> f
+                                .stripPrefix(1)
+                                .prefixPath("/api/v1/payments")
+                        )
+                        .uri("http://localhost:8083"))
+                .route("account-service-route", r -> r
+                        .path("/accounts/**")
+                        .filters(f -> f
+                                .stripPrefix(1)
+                                .prefixPath("/api/v1/accounts")
+                        )
+                        .uri("http://localhost:8084"))
+                .build();
     }
 }
