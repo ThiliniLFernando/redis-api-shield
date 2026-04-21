@@ -1,6 +1,8 @@
+server:
+  port: 8083
 spring:
   application:
     name: payment-service
 
 apis:
-  account-service: http://localhost:8084
+  account-service: http://localhost:8084/accounts

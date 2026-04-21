@@ -23,4 +23,29 @@ public record PaymentRequest(
         @NotNull(message = "Payment method is required")
         PaymentMethod paymentMethod
 ) {
+
+        @Override
+        public @NotNull(message = "Amount is required") @Positive(message = "Amount must be positive") BigDecimal amount() {
+                return amount;
+        }
+
+        @Override
+        public @NotNull(message = "Currency is required") String currency() {
+                return currency;
+        }
+
+        @Override
+        public @NotNull(message = "User ID is required") String userId() {
+                return userId;
+        }
+
+        @Override
+        public @NotNull(message = "Order ID is required") String orderId() {
+                return orderId;
+        }
+
+        @Override
+        public @NotNull(message = "Payment method is required") PaymentMethod paymentMethod() {
+                return paymentMethod;
+        }
 }
