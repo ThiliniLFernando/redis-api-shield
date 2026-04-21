@@ -1,2 +1,2 @@
-# redis-api-shield
-A specialized 'Gatekeeper' service designed to protect backend microservices from resource exhaustion and Brute Force attacks. This project implements a Distributed Rate Limiting strategy using Redis as a high-speed atomic counter, ensuring consistent limit enforcement across multiple gateway instances.
+# event-driven-payment-system
+A microservices-based payment system that simulates real-world transaction processing using an API Gateway, Payment Service, and Account Service. The system follows an event-driven architecture to ensure loose coupling and eventual consistency between services. It handles payment validation, transaction lifecycle management, and asynchronous account balance updates, demonstrating scalable and production-style backend design principles.
