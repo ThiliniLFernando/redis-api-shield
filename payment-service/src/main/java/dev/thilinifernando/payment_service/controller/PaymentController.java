@@ -2,6 +2,7 @@ package dev.thilinifernando.payment_service.controller;
 
 import dev.thilinifernando.payment_service.model.PaymentRequest;
 import dev.thilinifernando.payment_service.service.PaymentService;
+import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,13 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    public ResponseEntity<?> proceedPaymentRequest(@RequestBody PaymentRequest paymentRequest) {
+    public ResponseEntity<?> proceedPaymentRequest(@Valid @RequestBody PaymentRequest paymentRequest) {
         try{
-            paymentService.proceedPaymentRequest(paymentRequest); // call service layer
-            return null;
+            paymentService.proceedPaymentRequest(paymentRequest);
+            return ResponseEntity.ok().build();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace(); // debugging purposes
+            return ResponseEntity.badRequest().build();
         }
     }
 

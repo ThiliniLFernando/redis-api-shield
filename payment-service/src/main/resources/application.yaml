@@ -1,3 +1,6 @@
 spring:
   application:
     name: payment-service
+
+apis:
+  account-service: http://localhost:8084

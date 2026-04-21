@@ -1,0 +1,29 @@
+package dev.thilinifernando.payment_service.util;
+
+import dev.thilinifernando.payment_service.util.response.AccountResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Service
+public class ExternalService {
+
+    private WebClient webClient;
+
+    @Value("${apis.account-service}")
+    private String accountServiceUrl;
+
+    @Autowired
+    public ExternalService(WebClient webClient) {
+        this.webClient = webClient;
+    }
+
+    public AccountResponse getAccountDetails(String userId) {
+        return webClient.get()
+                .uri("http://localhost:8084/accounts/{userId}", userId)
+                .retrieve()
+                .bodyToMono(AccountResponse.class)
+                .block();
+    }
+}
